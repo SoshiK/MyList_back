@@ -8,6 +8,7 @@ module.exports = {
     directory: "./migrations"
   },
   ssl: {
+    require: true,
     rejectUnauthorized: false
   }
 };
