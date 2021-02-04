@@ -1,6 +1,4 @@
 const express = require("express");
-const knexfile = require("../knexfile");
-const { createItem, getItems } = require("./itemsController");
 const app = express();
 const listsController = require("./listsController");
 const itemsController = require("./itemsController");

@@ -7,4 +7,5 @@ module.exports = {
   migrations: {
     directory: "./migrations",
   },
+  ssl: true
 };
