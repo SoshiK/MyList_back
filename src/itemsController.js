@@ -10,7 +10,11 @@ module.exports = {
     list_id,
     updated_at: new Date()
   });
-  res.json({result});
+  if(result.rowCount === 1) {
+    res.json({ status: "ok" });
+  } else {
+    res.json({ status: "ng"})
+  }
   },
 
   get: async (req, res) => {
