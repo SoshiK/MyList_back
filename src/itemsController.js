@@ -23,5 +23,19 @@ module.exports = {
       .select("id", "title", "description", "url")
       .where("list_id", listId)
       .then(result => res.json({result}));
+  },
+
+  delete: async(req, res) => {
+    const itemId = Number(req.params.itemid);
+    db("items")
+      .where({ id: itemId})
+      .update({ deleted_at: new Date()})
+      .then(result => {
+        if(result === 1) {
+          res.json({ status: "ok" });
+        }else {
+          res.json({ status: "ng" });
+        }
+      });
   }
 }
