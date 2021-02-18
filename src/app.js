@@ -23,4 +23,7 @@ app.post("/api/item", itemsController.create);
 //get item
 app.get("/api/item/:listid", itemsController.get);
 
+//delete item
+app.delete("/api/item/:itemid", itemsController.delete);
+
 module.exports = app;
