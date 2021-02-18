@@ -21,7 +21,10 @@ module.exports = {
     const listId = Number(req.params.listid);
     db("items")
       .select("id", "title", "description", "url")
-      .where("list_id", listId)
+      .where({
+        "list_id": listId,
+        "deleted_at": null
+      })
       .then(result => res.json({result}));
   },
 
