@@ -21,5 +21,20 @@ module.exports = {
       .then(result => {
         res.json({result});
       })
+  },
+  
+  edit: async (req, res) => {
+    const { title, description, id } = req.body;
+    const result = await db("lists")
+      .where({id, id})
+      .update({
+        title,
+        description
+      });
+      if (result === 1) {
+        res.json({ status: "ok"});
+      } else {
+        res.json({ status: "ng"});
+      }
   }
 }
