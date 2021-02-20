@@ -17,6 +17,9 @@ app.post("/api/list", listsController.create);
 //get list
 app.get("/api/list", listsController.get);
 
+//edit list
+app.patch("/api/list", listsController.edit);
+
 //create item
 app.post("/api/item", itemsController.create);
 
