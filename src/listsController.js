@@ -18,6 +18,7 @@ module.exports = {
   get: async (req, res) => {
     db("lists")
       .select("id", "title", "description")
+      .orderBy("created_at")
       .then(result => {
         res.json({result});
       })
