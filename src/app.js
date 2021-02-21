@@ -26,6 +26,9 @@ app.post("/api/item", itemsController.create);
 //get item
 app.get("/api/item/:listid", itemsController.get);
 
+//edit item
+app.patch("/api/item", itemsController.edit);
+
 //delete item
 app.delete("/api/item/:itemid", itemsController.delete);
 
