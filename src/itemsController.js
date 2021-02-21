@@ -21,6 +21,7 @@ module.exports = {
     const listId = Number(req.params.listid);
     db("items")
       .select("id", "title", "description", "url")
+      .orderBy("updated_at", "desc")
       .where({
         "list_id": listId,
         "deleted_at": null
@@ -49,7 +50,8 @@ module.exports = {
       .update({
         title,
         description,
-        url
+        url,
+        updated_at: new Date()
       });
       if (result === 1) {
         res.json({ status: "ok"});
