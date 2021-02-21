@@ -40,5 +40,21 @@ module.exports = {
           res.json({ status: "ng" });
         }
       });
+  },
+
+  edit: async (req, res) => {
+    const { title, description, id, url } = req.body;
+    const result = await db("items")
+      .where({id, id})
+      .update({
+        title,
+        description,
+        url
+      });
+      if (result === 1) {
+        res.json({ status: "ok"});
+      } else {
+        res.json({ status: "ng"});
+      }
   }
 }
