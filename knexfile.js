@@ -1,3 +1,6 @@
+const pg = require("pg");
+pg.defaults.ssl = { rejectUnauthorized: false };
+
 module.exports = {
   client: "pg",
   connection:
@@ -7,8 +10,8 @@ module.exports = {
   migrations: {
     directory: "./migrations"
   },
-  ssl: {
-    require: true,
-    rejectUnauthorized: false
-  }
+  // ssl: {
+  //   require: true,
+  //   rejectUnauthorized: false
+  // }
 };
