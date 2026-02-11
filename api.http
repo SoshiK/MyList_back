@@ -1,0 +1,66 @@
+### Health Check
+GET http://localhost:9000/
+
+###
+
+### Create List
+POST http://localhost:9000/api/list
+Content-Type: application/json
+
+{
+  "title": "My First List",
+  "description": "This is a sample list"
+}
+
+###
+
+### Get All Lists
+GET http://localhost:9000/api/list
+
+###
+
+### Edit List
+PATCH http://localhost:9000/api/list
+Content-Type: application/json
+
+{
+  "id": 1,
+  "title": "Updated List Title",
+  "description": "Updated description"
+}
+
+###
+
+### Create Item
+POST http://localhost:9000/api/item
+Content-Type: application/json
+
+{
+  "list_id": 1,
+  "title": "Sample Item",
+  "description": "This is a sample item",
+  "url": "https://example.com"
+}
+
+###
+
+### Get Items by List ID
+GET http://localhost:9000/api/item/1
+
+###
+
+### Edit Item
+PATCH http://localhost:9000/api/item
+Content-Type: application/json
+
+{
+  "id": 1,
+  "title": "Updated Item Title",
+  "description": "Updated item description",
+  "url": "https://example.com/updated"
+}
+
+###
+
+### Delete Item
+DELETE http://localhost:9000/api/item/1

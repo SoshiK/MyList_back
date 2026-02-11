@@ -1,4 +1,4 @@
-require("dotenv");
+require("dotenv").config();
 const app = require("./app");
 const db = require("./knex");
 
