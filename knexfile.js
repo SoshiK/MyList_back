@@ -1,5 +1,7 @@
 const pg = require("pg");
-pg.defaults.ssl = { rejectUnauthorized: false };
+if (process.env.PGSSLMODE !== "disable") {
+  pg.defaults.ssl = { rejectUnauthorized: false };
+}
 
 module.exports = {
   client: "pg",
